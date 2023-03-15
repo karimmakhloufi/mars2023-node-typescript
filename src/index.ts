@@ -3,6 +3,7 @@ import cors from "cors";
 import dataSource from "./utils";
 import wilderController from "./controller/WilderController";
 import skillController from "./controller/SkillController";
+import gradeController from "./controller/GradeController";
 
 const app = express();
 app.use(cors());
@@ -22,7 +23,7 @@ app.get("/api/skill", skillController.read);
 app.delete("/api/skill/:id", skillController.delete);
 app.put("/api/skill/:id", skillController.update);
 
-app.put("/api/addskills", wilderController.addSkills);
+app.post("/api/grade", gradeController.create);
 
 const start = async (): Promise<void> => {
   await dataSource.initialize();
