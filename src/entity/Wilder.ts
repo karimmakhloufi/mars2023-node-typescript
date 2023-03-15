@@ -10,7 +10,7 @@ import { Skill } from "./Skill";
 
 @Entity()
 export class Wilder {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn()
   id: string;
 
   @Column()
